@@ -1,5 +1,7 @@
 {
   "name": "LibraryAppp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
