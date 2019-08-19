@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BookService } from '../service/Book.service';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -6,7 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  books:any[] = []
 
-  constructor() {}
+
+  constructor(private bookService: BookService, private platform: Platform) {
+    this.books = [];
+  }
+
+  ngOnInit()  
+  {
+    this.platform.ready().then(() => {
+      this.bookService.getBooks().then((books) => this.books = books);
+    })
+  }
 
 }

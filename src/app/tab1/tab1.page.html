@@ -8,9 +8,18 @@
 </ion-header>
 
 <ion-content>
-    <ion-list lines="none">
-      <ion-list-header>
-
-      </ion-list-header>
-    </ion-list>
+    <ion-card *ngFor="let book of books">
+      <ion-card-header>
+        <img src="https://via.placeholder.com/50">
+      </ion-card-header>
+      <ion-card-content>
+          <p style="float:left;"> {{ book?.number }} </p>
+          <h2 style="float: left; margin-left: 10px;">{{ book?.name }} </h2>
+          <h5 style="align-self: center">{{ book?.author }}</h5>
+          <p style="float: right;">{{ book?.blurb }}</p>
+    
+      </ion-card-content>
+      
+    </ion-card>
 </ion-content>
+

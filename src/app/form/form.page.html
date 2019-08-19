@@ -6,12 +6,14 @@
 
 <ion-content>
     <form [formGroup]="addForm">
+        <ion-input formControlName="Number" placeholder="ISBN Number"></ion-input>
+        <br />
         <ion-input formControlName="Name" placeholder="A Amazing Word"></ion-input>
         <br />
         <ion-input formControlName="Author" type="text" class="form-control" id="Author" name="Author Name" placeholder="Author Name"></ion-input>
         <br />
         <ion-input formControlName="Blurb" type="text" class="form-control" id="Blurb" name="Blurb" placeholder="Blurb"></ion-input>
         
-        <ion-button click="AddBook()"routerLink="['/tab1']" type="submit" [disabled]="!addForm.valid">Submit</ion-button>
+        <ion-button (click)="AddBook()" type="submit" [disabled]="!addForm.valid">Submit</ion-button>
         </form>
 </ion-content>
